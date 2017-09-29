@@ -292,6 +292,8 @@ milliseconds.
           return;
         }
 
+        //added to update `now` whenever a link is clicked now just on attached
+        this._lastChangedAt = window.performance.now();
         window.history.pushState({}, '', href);
         this.fire('location-changed', {}, {node: window});
       },
